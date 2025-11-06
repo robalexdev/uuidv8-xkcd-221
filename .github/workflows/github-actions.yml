@@ -1,0 +1,87 @@
+name: build
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: 'check'
+            python: '3.13'
+            tox_env: 'check'
+            os: 'ubuntu-latest'
+          - name: 'py39 (ubuntu/x64)'
+            python: '3.9'
+            python_arch: 'x64'
+            tox_env: 'py39'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'py310 (ubuntu/x64)'
+            python: '3.10'
+            python_arch: 'x64'
+            tox_env: 'py310'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'py311 (ubuntu/x64)'
+            python: '3.11'
+            python_arch: 'x64'
+            tox_env: 'py311'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'py312 (ubuntu/x64)'
+            python: '3.12'
+            python_arch: 'x64'
+            tox_env: 'py312'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'py313 (ubuntu/x64)'
+            python: '3.13'
+            python_arch: 'x64'
+            tox_env: 'py313'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'py314 (ubuntu/x64)'
+            python: '3.14'
+            python_arch: 'x64'
+            tox_env: 'py314'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'pypy39 (ubuntu/x64)'
+            python: 'pypy-3.9'
+            python_arch: 'x64'
+            tox_env: 'pypy39'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'pypy310 (ubuntu/x64)'
+            python: 'pypy-3.10'
+            python_arch: 'x64'
+            tox_env: 'pypy310'
+            os: 'ubuntu-latest'
+            cover: true
+          - name: 'pypy311 (ubuntu/x64)'
+            python: 'pypy-3.11'
+            python_arch: 'x64'
+            tox_env: 'pypy311'
+            os: 'ubuntu-latest'
+            cover: true
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+    - uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python }}
+        architecture: ${{ matrix.python_arch }}
+    - name: install dependencies
+      run: |
+        python -mpip install --progress-bar=off -r ci/requirements.txt
+        virtualenv --version
+        pip --version
+        tox --version
+        pip list --format=freeze
+    - name: test
+      run: >
+        tox -e ${{ matrix.tox_env }} -v

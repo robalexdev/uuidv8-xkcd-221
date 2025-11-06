@@ -1,0 +1,61 @@
+# This file exists so you can easily regenerate your project.
+#
+# `cookiepatcher` is a convenient shim around `cookiecutter`
+# for regenerating projects (it will generate a .cookiecutterrc
+# automatically for any template). To use it:
+#
+#    pip install cookiepatcher
+#    cookiepatcher gh:ionelmc/cookiecutter-pylibrary uuidv8-xkcd-221
+#
+# See:
+#    https://pypi.org/project/cookiepatcher
+#
+# Alternatively, you can run:
+#
+#    cookiecutter --overwrite-if-exists --config-file=uuidv8-xkcd-221/.cookiecutterrc gh:ionelmc/cookiecutter-pylibrary
+
+default_context:
+    c_extension_optional: "no"
+    c_extension_support: "no"
+    codacy: "no"
+    codacy_projectid: "[Get ID from https://app.codacy.com/gh/robalexdev/uuidv8-xkcd-221/settings]"
+    codeclimate: "no"
+    codecov: "no"
+    command_line_interface: "plain"
+    command_line_interface_bin_name: "uuidv8-xkcd-221"
+    coveralls: "no"
+    distribution_name: "uuidv8-xkcd-221"
+    email: "robert@robalexdev.com"
+    formatter_quote_style: "double"
+    full_name: "Robert Alexander"
+    function_name: "generate"
+    github_actions: "yes"
+    github_actions_osx: "no"
+    github_actions_windows: "no"
+    license: "MIT license"
+    module_name: "core"
+    package_name: "uuidv8_xkcd_221"
+    pre_commit: "yes"
+    project_name: "UUIDv8_XKCD_221"
+    project_short_description: "A standards compliant UUIDv8 library using the XKCD 221 generator"
+    pypi_badge: "yes"
+    pypi_disable_upload: "no"
+    release_date: "today"
+    repo_hosting: "github.com"
+    repo_hosting_domain: "github.com"
+    repo_main_branch: "main"
+    repo_name: "uuidv8-xkcd-221"
+    repo_username: "robalexdev"
+    scrutinizer: "no"
+    setup_py_uses_setuptools_scm: "no"
+    sphinx_docs: "no"
+    sphinx_docs_hosting: "https://uuidv8-xkcd-221.readthedocs.io/"
+    sphinx_doctest: "no"
+    sphinx_theme: "furo"
+    test_matrix_separate_coverage: "no"
+    tests_inside_package: "no"
+    version: "0.0.0"
+    version_manager: "bump2version"
+    website: "https://alexsci.com/blog/"
+    year_from: "2025"
+    year_to: "2025"
