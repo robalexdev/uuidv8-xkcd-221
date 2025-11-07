@@ -1,9 +1,9 @@
-A standards compliant UUIDv8 implementation using the [XKCD 221 random number algorithm](https://xkcd.com/221/).
+A standards compliant UUIDv8 implementation using the `XKCD 221 random number algorithm <https://xkcd.com/221/>`__.
 
 What is this?
 =============
 
-[RFC 9562 - Universally Unique IDentifiers (UUIDs)](https://datatracker.ietf.org/doc/rfc9562/) defines the UUIDv8 format as:
+`RFC 9562 - Universally Unique IDentifiers (UUIDs) <https://datatracker.ietf.org/doc/rfc9562/>`__ defines the UUIDv8 format as:
 
     UUIDv8 provides a format for experimental or vendor-specific use
     cases.  The only requirement is that the variant and version bits
@@ -30,8 +30,8 @@ Accordingly, the author requests that UUID implementations document what propert
 Is this a real concern?
 =======================
 
-A [blog post series](https://alexsci.com/blog/uuid-collection/) accompanies this library.
-A [catalog of real-world UUID collisions](https://alexsci.com/blog/uuid-oops/) shows problems even when using RFC-compliant implementations.
+A `blog post series <https://alexsci.com/blog/uuid-collection/>`__ accompanies this library.
+A `catalog of real-world UUID collisions <https://alexsci.com/blog/uuid-oops/>`__ shows problems even when using RFC-compliant implementations.
 
 
 Usage
@@ -58,7 +58,7 @@ Security
 
 The author of the XKCD webcomic, Randall Munroe, rolled a fair dice when developing his random number algorithm.
 However, more information is needed to understand what properties this dice had.
-Randall's comics clearly demonstrate that he [knows about securely generating random numbers](https://xkcd.com/2626/) and may have access to [dice with exotic properties](https://xkcd.com/708/).
+Randall's comics clearly demonstrate that he `knows about securely generating random numbers <https://xkcd.com/2626/>`__ and may have access to `dice with exotic properties <https://xkcd.com/708/>`__.
 
 But seriously, no, it's not a cryptographically secure random number generator.
 
@@ -72,4 +72,4 @@ Don't install this.
 Disclaimer
 ==========
 
-This UUID algorithm is inspired by, but not related to, the wonderful [XKCD web comic](https://xkcd.com/).
+This UUID algorithm is inspired by, but not related to, the wonderful `XKCD web comic <https://xkcd.com/>`__.
